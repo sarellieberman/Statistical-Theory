@@ -1,0 +1,31 @@
+Q1: Alcohol consumption vs grades
+ Pearson r (Walc vs G3) = -0.116,  p = 0.0001784
+ ANOVA on G3 ~ C(Walc):
+                sum_sq      df         F    PR(>F)
+C(Walc)     223.514612     4.0  3.780943  0.004641
+Residual  15355.407802  1039.0       NaN       NaN
+
+ Tukey HSD results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj   lower   upper  reject
+----------------------------------------------------
+     1      2  -0.2714  0.912 -1.1356  0.5928  False
+     1      3  -0.4537 0.6524 -1.3642  0.4568  False
+     1      4  -1.2075 0.0132 -2.2452 -0.1697   True
+     1      5  -1.3465 0.0476  -2.684 -0.0089   True
+     2      3  -0.1823  0.988  -1.193  0.8283  False
+     2      4  -0.9361 0.1553 -2.0627  0.1905  False
+     2      5  -1.0751 0.2264 -2.4827  0.3325  False
+     3      4  -0.7538 0.3907 -1.9163  0.4087  False
+     3      5  -0.8927 0.4354 -2.3292  0.5437  False
+     4      5   -0.139 0.9991 -1.6593  1.3813  False
+----------------------------------------------------
+
+
+Q1: U-statistic: 68675.0000, P-value: 0.000000
+Conclusion: There is a significant difference in G3 between frequent and non-frequent drinkers.
+Q2: absences vs grades
+ Pearson r = -0.046,  p = 0.1403
+ Welch t-test (<=5 vs >=15 absences): t = 2.85, p = 0.005565
+
