@@ -25,7 +25,3 @@ group1 group2 meandiff p-adj   lower   upper  reject
 
 Q1: U-statistic: 68675.0000, P-value: 0.000000
 Conclusion: There is a significant difference in G3 between frequent and non-frequent drinkers.
-Q2: absences vs grades
- Pearson r = -0.046,  p = 0.1403
- Welch t-test (<=5 vs >=15 absences): t = 2.85, p = 0.005565
-
