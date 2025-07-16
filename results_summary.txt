@@ -1,0 +1,67 @@
+Q1: Alcohol consumption vs grades
+ Pearson r (Walc vs G3) = -0.116,  p = 0.0001784
+ ANOVA results:
+                sum_sq      df         F    PR(>F)
+C(Walc)     223.514612     4.0  3.780943  0.004641
+Residual  15355.407802  1039.0       NaN       NaN
+
+ Tukey HSD results:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+group1 group2 meandiff p-adj   lower   upper  reject
+----------------------------------------------------
+     1      2  -0.2714  0.912 -1.1356  0.5928  False
+     1      3  -0.4537 0.6524 -1.3642  0.4568  False
+     1      4  -1.2075 0.0132 -2.2452 -0.1697   True
+     1      5  -1.3465 0.0476  -2.684 -0.0089   True
+     2      3  -0.1823  0.988  -1.193  0.8283  False
+     2      4  -0.9361 0.1553 -2.0627  0.1905  False
+     2      5  -1.0751 0.2264 -2.4827  0.3325  False
+     3      4  -0.7538 0.3907 -1.9163  0.4087  False
+     3      5  -0.8927 0.4354 -2.3292  0.5437  False
+     4      5   -0.139 0.9991 -1.6593  1.3813  False
+----------------------------------------------------
+
+ Mann-Whitney U test: U-statistic = 68675.0000, p-value = 0.000000
+Conclusion: There is a significant difference in G3 between frequent and non-frequent drinkers.
+--------------------------------------------------------------------------------
+
+Q2: Joint test of predictors on weekend alcohol use
+
+Wald joint test of β1=…=β5=0
+  χ²(5) = 11.789, p = 0.0378
+→ Reject H₀: predictors jointly explain G3.
+--------------------------------------------------------------------------------
+
+Q3: Kruskal-Wallis test for predictors on G3 over heavy drinkers
+Kruskal-Wallis for Fedu: statistic=12.24, p-value=0.006607
+Kruskal-Wallis for Medu: statistic=14.42, p-value=0.006081
+Kruskal-Wallis for Pstatus: statistic=1.96, p-value=0.1619
+Kruskal-Wallis for famsup: statistic=0.31, p-value=0.5808
+Kruskal-Wallis for romantic: statistic=1.13, p-value=0.288
+Kruskal-Wallis for studytime: statistic=0.19, p-value=0.98
+Kruskal-Wallis for failures: statistic=47.38, p-value=2.886e-10
+Kruskal-Wallis for schoolsup: statistic=1.45, p-value=0.2285
+Kruskal-Wallis for higher: statistic=22.92, p-value=1.692e-06
+Kruskal-Wallis for goout: statistic=6.62, p-value=0.1571
+Kruskal-Wallis for absences: statistic=17.45, p-value=0.7379
+Significant predictors (p < 0.05): Fedu, Medu, failures, higher
+--------------------------------------------------------------------------------
+
+Q4: Predicting student failure using logistic regression
+
+AUC: 0.846
+Accuracy: 0.770
+Confusion matrix:
+[[118  14]
+ [ 34  43]]
+
+Classification report:
+              precision    recall  f1-score   support
+
+           0      0.776     0.894     0.831       132
+           1      0.754     0.558     0.642        77
+
+    accuracy                          0.770       209
+   macro avg      0.765     0.726     0.736       209
+weighted avg      0.768     0.770     0.761       209
