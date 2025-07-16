@@ -1,29 +1,7 @@
 Q1: Alcohol consumption vs grades
- Pearson r (Walc vs G3) = -0.116,  p = 0.0001784
- ANOVA results:
-                sum_sq      df         F    PR(>F)
-C(Walc)     223.514612     4.0  3.780943  0.004641
-Residual  15355.407802  1039.0       NaN       NaN
-
- Tukey HSD results:
-Multiple Comparison of Means - Tukey HSD, FWER=0.05 
-====================================================
-group1 group2 meandiff p-adj   lower   upper  reject
-----------------------------------------------------
-     1      2  -0.2714  0.912 -1.1356  0.5928  False
-     1      3  -0.4537 0.6524 -1.3642  0.4568  False
-     1      4  -1.2075 0.0132 -2.2452 -0.1697   True
-     1      5  -1.3465 0.0476  -2.684 -0.0089   True
-     2      3  -0.1823  0.988  -1.193  0.8283  False
-     2      4  -0.9361 0.1553 -2.0627  0.1905  False
-     2      5  -1.0751 0.2264 -2.4827  0.3325  False
-     3      4  -0.7538 0.3907 -1.9163  0.4087  False
-     3      5  -0.8927 0.4354 -2.3292  0.5437  False
-     4      5   -0.139 0.9991 -1.6593  1.3813  False
-----------------------------------------------------
-
+ Spearman r (Walc vs G3) = -0.149,  p = 6.286e-07
  Mann-Whitney U test: U-statistic = 68675.0000, p-value = 0.000000
-Conclusion: There is a significant difference in G3 between frequent and non-frequent drinkers.
+Conclusion: Frequent drinkers (Walc > 3) have significantly lower G3 grades than non-frequent drinkers (Walc <= 3).
 --------------------------------------------------------------------------------
 
 Q2: Joint test of predictors on weekend alcohol use
@@ -33,29 +11,29 @@ Wald joint test of β1=…=β5=0
 → Reject H₀: predictors jointly explain G3.
 --------------------------------------------------------------------------------
 
-Q3: Kruskal-Wallis test and Pearson Correlation for predictors on G3 (Heavy Drinkers)
+Q3: Kruskal-Wallis test and Spearman Correlation for predictors on G3 (Heavy Drinkers)
 
-Combined Kruskal & Pearson results:
+Combined Kruskal & Spearman results:
 
-Predictor Kruskal_stat Kruskal_p Pearson_r Pearson_p
- failures      47.3792    0.0000   -0.4711    0.0000
-   higher      22.9168    0.0000    0.3328    0.0000
-     Medu      14.4152    0.0061    0.2048    0.0028
-     Fedu      12.2391    0.0066    0.2070    0.0025
-    goout       6.6239    0.1571   -0.1344    0.0512
-  Pstatus       1.9560    0.1619   -0.0831    0.2296
-schoolsup       1.4503    0.2285   -0.0581    0.4010
- romantic       1.1291    0.2880   -0.1214    0.0785
-   famsup       0.3050    0.5808   -0.0342    0.6213
- absences      17.4530    0.7379   -0.0384    0.5795
-studytime       0.1850    0.9800    0.0113    0.8702
+Predictor Kruskal_stat Kruskal_p Spearman_r Spearman_p
+ failures      47.3792    0.0000    -0.4671     0.0000
+   higher      22.9168    0.0000     0.3303     0.0000
+     Medu      14.4152    0.0061     0.2174     0.0015
+     Fedu      12.2391    0.0066     0.2385     0.0005
+    goout       6.6239    0.1571    -0.0954     0.1676
+  Pstatus       1.9560    0.1619    -0.0965     0.1625
+schoolsup       1.4503    0.2285    -0.0831     0.2293
+ romantic       1.1291    0.2880    -0.0733     0.2890
+   famsup       0.3050    0.5808    -0.0381     0.5820
+ absences      17.4530    0.7379    -0.0936     0.1757
+studytime       0.1850    0.9800     0.0091     0.8955
 
 Significant predictors (p < 0.05 for both tests):
 
-  failures: Kruskal p=0.000, Pearson r=-0.47
-  higher: Kruskal p=0.000, Pearson r=0.33
-  Medu: Kruskal p=0.006, Pearson r=0.20
-  Fedu: Kruskal p=0.007, Pearson r=0.21
+  failures: Kruskal p=0.000, Spearman r=-0.47
+  higher: Kruskal p=0.000, Spearman r=0.33
+  Medu: Kruskal p=0.006, Spearman r=0.22
+  Fedu: Kruskal p=0.007, Spearman r=0.24
 --------------------------------------------------------------------------------
 
 Q4: Predicting student failure using logistic regression
